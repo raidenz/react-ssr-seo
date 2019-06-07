@@ -2,14 +2,19 @@
 
 # dependencies
 /node_modules
+/bower_components
 /.pnp
 .pnp.js
+
+# Editor
+.vscode
 
 # testing
 /coverage
 
 # production
 /build
+/server
 
 # misc
 .DS_Store
