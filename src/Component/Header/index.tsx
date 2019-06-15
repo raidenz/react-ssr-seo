@@ -14,8 +14,13 @@ import {
   DropdownItem
 } from 'reactstrap';
 
-export default class Example extends React.Component {
-  constructor(props) {
+interface State {
+  isOpen: boolean;
+}
+interface Props {}
+
+export default class Example extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
 
     this.toggle = this.toggle.bind(this);

@@ -1,8 +1,14 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { Header, Footer } from './../../Component';
+import { Header, Footer } from '../../Component';
 
-const FullPage = ({ component: Component, ...rest }) => {
+interface Props {
+  component: any;
+  path: string;
+  exact?: boolean;
+}
+
+const FullPage = ({ component: Component, ...rest }: Props) => {
   return (
     <Route
       {...rest}

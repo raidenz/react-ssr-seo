@@ -1,6 +1,10 @@
 import React from 'react';
 
-const ContentWrapper = ({ children }) => {
+interface Props {
+  children: React.ReactNode;
+}
+
+const ContentWrapper = ({ children }: Props) => {
   return <div className="main-content">{children}</div>;
 };
 

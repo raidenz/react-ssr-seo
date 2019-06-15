@@ -4,9 +4,9 @@ import Helmet from 'react-helmet';
 import Homepage from './Homepage';
 import About from './About';
 import Page404 from './Page404';
-import { PageFull } from './../Layout';
+import { PageFull } from '../Layout';
 
-const App = () => {
+const App: React.FunctionComponent = () => {
   return (
     <Fragment>
       <Helmet>
