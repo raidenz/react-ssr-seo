@@ -7,6 +7,17 @@
   "plugins": [
     "@babel/plugin-proposal-class-properties",
     "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-transform-modules-commonjs",
+    [
+      "transform-assets",
+      {
+        "extensions": [
+          "css",
+          "svg"
+        ],
+        "name": "static/media/[name].[hash:8].[ext]"
+      }
+    ],
   ],
   "compact": true,
   "comments": false,
