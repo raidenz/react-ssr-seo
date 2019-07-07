@@ -1,0 +1,21 @@
+{
+  "extends": ["tslint-react"],
+  "linterOptions": {"exclude": ["config/**/*.js", "node_modules/**/*.ts"]},
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "node": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "rules": {
+    "no-console": "off",
+    "strict": ["error", "global"],
+    "curly": "warn",
+    "quotemark": [true, "single", "jsx-double"],
+    "jsx-boolean-value": false,
+    "semicolon": true,
+  }
+}

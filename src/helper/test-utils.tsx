@@ -1,7 +1,7 @@
 import React from 'react';
-import { createStore } from 'redux';
+import { createStore, Store } from 'redux';
 import { withRouter } from 'react-router';
-import { Provider, connect } from 'react-redux';
+import { Provider } from 'react-redux';
 import { render, cleanup } from '@testing-library/react';
 import reducer from '../store/reducers';
 
@@ -14,14 +14,23 @@ const LocationDisplay = withRouter(({ location }) => (
 
 afterEach(cleanup);
 
+interface RenderOptions {
+  initialState?: any;
+  store?: Store<any>;
+  route?: any;
+  history?: any;
+}
+
+const defaultState = {};
+
 const renderWithRedux = (
-  ui,
+  ui: React.ReactElement<any>,
   {
-    initialState,
+    initialState = defaultState,
     store = createStore(reducer, initialState),
     route = '/',
-    history = createMemoryHistory({ initialEntries: [route] })
-  } = {}
+    history = createMemoryHistory({ initialEntries: [route] }),
+  }: RenderOptions = {},
 ) => {
   return {
     ...render(
@@ -30,10 +39,10 @@ const renderWithRedux = (
           {ui}
           <LocationDisplay />
         </Router>
-      </Provider>
+      </Provider>,
     ),
     store,
-    history
+    history,
   };
 };
 
